@@ -1,16 +1,16 @@
 <?php
 $cyty = array (
- 	'city' = array(
+ 	array(
 		'name' => 'Kharkiv',
 		'population' => 100500,
  ),
 
- 	'city1' = array(
+ 	array(
 		'name' => 'Lviv',
 		'population' => 200500
  ),
 
- 	'city2' = array(
+ 	array(
 		'name' => 'Poltava',
 		'population' => 300500
  )
