@@ -151,7 +151,7 @@ $Arr = array(
 $Arr = array(
     'info' => 'Замечательный салон ',
     'name' => 'SunKOR',
-    'info1' => 'в ктором вы можете преобрести автомобили корейского автопрома, выпуска от 2005 по 2015',
+    'info1' => 'в котором вы можете приобрести автомобили корейского автопрома, выпуска от 2005 по 2015',
     			
                 'br_name' => array (
                      	'HUNDAI', 'KIA', 'DAEWOO'),
@@ -166,7 +166,7 @@ $Arr = array(
 
 //echo 
 
-echo $Arr['info'], $Arr['name'], $Arr['info1'];
+echo $Arr['info']. ' ' .$Arr['name']. ' ' .$Arr['info1'];
 echo "\n";
 echo "\n";
 echo $Arr['br_name'][0];
