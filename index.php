@@ -101,7 +101,7 @@ echo $Arr[0]['br_name1'][0]['m_name1'];
 
 
 // ДЗ Автосалон
-
+/*
 $Arr = array(
     'info' => 'Замечательный салон ',
     'name' => 'SunKOR',
@@ -144,6 +144,9 @@ $Arr = array(
                 )
 );
 
+*/
+
+//attempt №2
 
 $Arr = array(
     'info' => 'Замечательный салон ',
