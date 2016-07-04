@@ -152,16 +152,11 @@ $Arr = array(
     'info' => 'Замечательный салон ',
     'name' => 'SunKOR',
     'info1' => 'в котором вы можете приобрести автомобили корейского автопрома, выпуска от 2005 по 2015',
-    			
-                'br_name' => array (
-                     	'HUNDAI', 'KIA', 'DAEWOO'),
-                'HU_mod' =>  array(
-                   	  	'Accent','Elantra','Elantra'),    
-                'KA_mod' =>  array(
-                        	'Rio', 'Cerato', 'Quoris'),
-                'DW_mod' => array(
-                        	'Gentra', 'Lanos', 'Matiz'), 
-                'ear' => array(2005, 2010, 2015)             
+    'br_name' => array ('HUNDAI', 'KIA', 'DAEWOO'),
+    'HU_mod' =>  array('Accent','Elantra','Elantra'),    
+    'KA_mod' =>  array('Rio', 'Cerato', 'Quoris'),
+    'DW_mod' => array('Gentra', 'Lanos', 'Matiz'), 
+    'ear' => array(2005, 2010, 2015)             
 );
 
 //echo 
@@ -188,3 +183,16 @@ echo "\n";
 echo $Arr['DW_mod'][0].' '.$Arr['DW_mod'][1].' '.$Arr['DW_mod'][2];
 echo "\n";
 echo $Arr['ear'][0]. ' ' .$Arr['ear'][1]. ' ' .$Arr['ear'][2];
+
+//2variant
+
+$auto = [
+	'ear' => [ 2005, 2010, 2015],
+	'brand' => ['DAEWOO','KIA', 'HUNDAI']
+	 'br_model' => [
+	  'm_dw' => ['Gentra', 'Lanos', 'Matiz'],
+	  'm_kia' => ['Rio', 'Cerato', 'Quoris'],
+	  'm_hu' => ['Accent','Elantra','Elantra']
+	  			 ]
+	 	
+];
