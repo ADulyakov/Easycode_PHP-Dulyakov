@@ -18,6 +18,7 @@ if (in_array(35, $mas)) {
 }
 
 */
+$res = 0;
 $mas = array();
 
 for ($i=0; $i <100; $i++){
@@ -25,14 +26,18 @@ for ($i=0; $i <100; $i++){
 };
 
 $mas2 = array();
+
 for ($i=0; $i <100; $i++){
     $mas2[] = rand(1,100);
 };
 
+in_array ($mas2);
 
-if (in_array(35, $mas) && in_array(35, $mas2)) {
-    echo '35 есть в массиве!';
+foreach ($mas as $value){
+    if (in_array ($value, $mas) == $mas2){
+
     }
-    else {
-    echo '35 есть в массиве2!';
+
 }
+
+
