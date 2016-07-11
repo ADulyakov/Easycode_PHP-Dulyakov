@@ -1,4 +1,5 @@
 <?php
+/*
 $mas = array();
 
 for ($i=0; $i <100; $i++){
@@ -14,4 +15,27 @@ if (in_array(35, $mas)) {
     echo '35 есть в массиве!';
 } else {
     echo '35 нет в массиве!';
+}
+
+*/
+$mas = array();
+
+for ($i=0; $i <100; $i++){
+    $mas[] = rand(1,100);
+};
+
+$mas2 = array();
+for ($i=0; $i <100; $i++){
+    $mas2[] = rand(1,100);
+};
+
+
+if (in_array(35, $mas)) {
+    echo '35 есть в массиве!';
+} elseif (in_array(35, $mas2)) {
+    echo '35 есть в массиве!';
+} else {
+
+    echo '35 есть в массиве2!';
+
 }
