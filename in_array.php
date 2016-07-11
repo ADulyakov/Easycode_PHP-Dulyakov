@@ -30,12 +30,9 @@ for ($i=0; $i <100; $i++){
 };
 
 
-if (in_array(35, $mas)) {
+if (in_array(35, $mas) && in_array(35, $mas2)) {
     echo '35 есть в массиве!';
-} elseif (in_array(35, $mas2)) {
-    echo '35 есть в массиве!';
-} else {
-
+    }
+    else {
     echo '35 есть в массиве2!';
-
 }
