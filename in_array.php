@@ -31,13 +31,8 @@ for ($i=0; $i <100; $i++){
     $mas2[] = rand(1,100);
 };
 
-in_array ($mas2);
-
 foreach ($mas as $value){
-    if (in_array ($value, $mas) == $mas2){
-
-    }
-
+    if ($value in_array($value,$mas)
 }
 
 
