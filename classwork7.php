@@ -1,4 +1,4 @@
-<php
+<?php
 
 $numbers = array();
 for ($i = 100; $i > 0; $i--) {

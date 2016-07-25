@@ -188,11 +188,10 @@ echo $Arr['ear'][0]. ' ' .$Arr['ear'][1]. ' ' .$Arr['ear'][2];
 
 $auto = [
 	'ear' => [ 2005, 2010, 2015],
-	'brand' => ['DAEWOO','KIA', 'HUNDAI']
+	'brand' => ['DAEWOO','KIA', 'HUNDAI'],
 	 'br_model' => [
 	  'm_dw' => ['Gentra', 'Lanos', 'Matiz'],
 	  'm_kia' => ['Rio', 'Cerato', 'Quoris'],
 	  'm_hu' => ['Accent','Elantra','Elantra']
-	  			 ]
-	 	
+	 ]
 ];
