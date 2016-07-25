@@ -13,6 +13,45 @@ echo 'Написать функцию, которая принимает на в
  * $notOddElements = getElements($array, false); [1, 3]
  */
 
+$numArr = array();
+for ($i = 0; $i < 40; $i++ ){
+    $numArr[] = $i;
+};
+
+function sortNumArr($array, $true, false){
+    $true = true;
+    $false = false;
+    $evenElements = array();
+    $oddElements = array();
+
+//         foreach ($array as $value) {
+//            if ($value % 2 == 0){
+//                $evenElements[] = $value;
+//            } elseif ($value % 2 == 1){
+//                $oddElements[] = $value;
+//            }
+//        };
+    $result = array();
+
+    switch ($array) {
+        case true:
+            foreach ($array as $value) {
+                if ($value % 2 == 0) {
+                    $result[] = $value;
+                }
+            }
+        case false:
+            foreach ($array as $value) {
+                if ($value % 2 == 1) {
+                    $result[] = $value;
+                }
+            }
+
+            return $result;
+            print_r($oddElements);
+    };
+
+
 echo '<br />';
 echo '<hr>';
 echo '<br />';
@@ -81,6 +120,34 @@ echo 'Написать функцию, которая принимает пер�
  * $avgPrice = getAvgPrice($products);
  * echo $avgPrice; // 250
  */
+
+$products = array(
+    'product1' => array('price' => 100),
+    'product2' => array('price' => 200),
+    'product3' => array('price' => 300),
+    'product4' => array('price' => 400),
+);
+
+function AvgPrice ($array) {
+    $count = 0;
+    $sumVal = 0;
+
+    foreach ($array['product']['price'] as $value){
+        $sumVal += $value;
+        $count++;
+    };
+
+    $getAvgPrice = $sumVal / $count;
+
+    return $getAvgPrice;
+
+};
+
+
+$avgPrice = AvgPrice($products);
+
+echo $avgPrice;
+
 
 echo '<br />';
 echo '<hr>';
