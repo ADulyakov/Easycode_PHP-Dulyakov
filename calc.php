@@ -7,7 +7,6 @@
         <option value="2"> - </option>
         <option value="3"> * </option>
         <option value="4"> / </option>
-        <option value="5"> ** </option>
     </select>
     <input type="text" name="value2" />
     <br />
@@ -17,9 +16,6 @@
 </form>
 
 <?php
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
 echo '<hr>';
 
 function calc ($array){
@@ -32,10 +28,8 @@ function calc ($array){
         $action = $array['value1'] * $array['value2'];
     } elseif ($array['methud'] == 4) {
         $action = $array['value1'] / $array['value2'];
-    } elseif ($array['methud'] == 5) {
-        $action = $array['value1'] ** $array['value2'];
     };
         return $action;
 };
 
-echo calc($_POST);
+echo 'Результат: ' . calc($_POST);
