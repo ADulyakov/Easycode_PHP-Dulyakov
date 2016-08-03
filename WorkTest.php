@@ -18,7 +18,7 @@ for ($i = 0; $i < 40; $i++ ){
     $numArr[] = $i;
 };
 
-function sortNumArr($array, $true, false){
+function sortNumArr($array, $boolean){
     $true = true;
     $false = false;
     $evenElements = array();
