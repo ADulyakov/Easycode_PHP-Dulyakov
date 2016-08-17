@@ -30,4 +30,4 @@ foreach (getData() as $key => $data):
         </form>
 
     </div>
-<?php endforeach; ?> 
+<?php endforeach; ?>  
