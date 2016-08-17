@@ -16,17 +16,17 @@ if (isset($_GET['header']) && $_GET['header'] != '') {
     </form>
 <?php
 
-//https://habrastorage.org/files/bbb/6d0/ce5/bbb6d0ce5b2e409aa9f8fe986d87eeec.png
-
 foreach (getData() as $key => $data):
     ?>
     <div class="post">
-        <h6><?= $data['date']; ?></h6>
+        <h6> Датв создания поста: <?= isset($data['date']) ? $data['date'] : 'Дата отсутствует'; ?></h6>
+        <h6> Время жизни поста: <?= isset($data['time_left']) ? $data['time_left'] : 'Дата отсутствует' ;?> </h6>
         <h1><?= $data['header']; ?></h1>
-        <img src="<?= $data['pic']; ?>" width="auto" height="auto"  alt="pic">
+        <img src="<?= $data['pic']; ?>" width="auto" height="auto"  alt="место для картиныки">
         <p><?= $data['text'] ?></p>
+
         <form action="">
-            <input type="button" name="button" />
+            <input type="button" name="button" value="Скрыть"/>
         </form>
 
     </div>
