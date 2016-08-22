@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 function showImage($noteName) {
     $noteName = $noteName . '-img';
     if (isset($_COOKIE[$noteName])) {
@@ -9,17 +10,17 @@ function showImage($noteName) {
     }
 
     return true;
-}
+};
 
-function hideNoteImage($noteName) {
+function hideNoteImage($noteName, $value = 1, $time = 3600 ) {
     $noteName = $noteName . '-img';
-    setcookie($noteName, 1, time() + 3600);
-}
+    setcookie($noteName, $value, time() + $time);
+};
 
-function saveData($header, $text, $time = 86400)
+function saveData($header, $text, $imgUrl, $time = 86400)
 {
-    $i = 0;
     $time = time() + $time;
+    $i = 0;
     while (true) {
         $name = 'todo-' . $i;
         $i++;
@@ -29,13 +30,14 @@ function saveData($header, $text, $time = 86400)
         $data = array(
             'header' => $header,
             'text'   => $text,
+            'imgUrl' => $imgUrl,
             'date_creation' => date('Y-m-d H:i:s')
         );
         $encodedData = json_encode($data);
         setcookie($name, $encodedData, $time);
         break;
     }
-}
+};
 function getData()
 {
     $data = array();
@@ -56,4 +58,4 @@ function getData()
             return $data;
         }
     }
-}
+};

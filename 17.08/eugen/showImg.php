@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 require_once 'cookie.php';
 if (isset($_GET['noteName'])) {
-    hideNoteImage($_GET['noteName']);
+    hideNoteImage($_GET['noteName'], '', -1);
 };
-
 header('location: index.php');
+ 

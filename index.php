@@ -159,7 +159,7 @@ $Arr = array(
     'ear' => array(2005, 2010, 2015)             
 );
 
-//echo 
+//echo
 
 echo $Arr['info']. ' ' .$Arr['name']. ' ' .$Arr['info1'];
 echo "\n";
