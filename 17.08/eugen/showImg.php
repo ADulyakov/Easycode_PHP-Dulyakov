@@ -8,4 +8,3 @@ if (isset($_GET['noteName'])) {
     hideNoteImage($_GET['noteName'], '', -1);
 };
 header('location: index.php');
- 

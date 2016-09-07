@@ -9,5 +9,5 @@ if (isset($_GET['header']) && $_GET['header'] != '') {
     saveData($_GET['header'], $_GET['text'], $_GET['imgUrl']);
 }
 header('location: index.php');
-?>
-<a href="index.php">На главную</a>
+
+//<a href="index.php">На главную</a>
