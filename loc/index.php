@@ -6,8 +6,8 @@ error_reporting(E_ALL);
 ?>
 <!--HTML part "View table author" -->
 <form action="" name="addToBase" method="GET">
-    Имя автора:     <input type="text" name="author" value="" > <br>
-    Возраст автора: <input type="text" name="age" value="" > <br>
+    Имя автора:     <input type="text" name="author"> <br>
+    Возраст автора: <input type="text" name="age"> <br>
     <input type="button" name="addButton" value="добавить" >
 </form>
 
@@ -63,12 +63,6 @@ if(isset($_GET['author']) && $_GET['author'] !='' && $_GET['age'] !=''){
         }
 };
 
-//delete author from Db
-if(isset($_GET['delAuthorId'])) {
-    $delId = $_GET['delAuthorId'];
-    $delFromDB = mysqli_query($connectionObject, "DELETE FROM `author` WHERE `id` = $delId");
-};
-
 //echo '<br />';
 //echo '<pre>';
 //print_r($rows);
@@ -100,4 +94,10 @@ if(isset($_GET['delAuthorId'])) {
     <?php endforeach; ?>
 </table>
 
-
+<?php
+//delete author from Db
+if(isset($_GET['delAuthorId'])) {
+    $delId = $_GET['delAuthorId'];
+    $delFromDB = mysqli_query($connectionObject, "DELETE FROM `author` WHERE `id` = $delId");
+};
+?>
