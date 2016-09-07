@@ -46,7 +46,7 @@ while ($row = mysqli_fetch_assoc($resource)){
 if(isset($_GET['author']) && $_GET['author'] !='' && $_GET['age'] !=''){
     $name = $_GET['author'];
     $age = $_GET['age'];
-    $addDataToBase = "INSERT INTO 'author' (`name`, `age`) VALUE ('$name','$age');";
+    $addDataToBase = "INSERT INTO `author` (`name`, `age`) VALUES ('$name','$age');";
     $saveToBase = mysqli_query($connectionObject, $addDataToBase);
         if($saveToBase){
             echo "Автор добавлен успешно";
@@ -58,7 +58,7 @@ if(isset($_GET['author']) && $_GET['author'] !='' && $_GET['age'] !=''){
 //delete author from Db
 if(isset($_GET['delAuthorId'])) {
     $delId = $_GET['delAuthorId'];
-    $delFromDB = mysqli_query($connectionObject, "DELETE FROM `autor` WHERE `id` = $delId");
+    $delFromDB = mysqli_query($connectionObject, "DELETE FROM `author` WHERE `id` = $delId");
 };
 
 echo '<br />';
@@ -92,7 +92,7 @@ echo '</pre>';
         <td> <?= $author ['booksQuantity'] ?> </td>
         <td>
             <form action="" name="deleteAuthor" method="GET">
-                <input type="hidden" name="delAuthorId" value="<?= $author ['id'] ?>">
+                <input type="hidden" name="delAuthorId" value="<?= $author['id'] ?>">
                 <input type="button" name="delete"  value="Удалить">
             </form>
         </td>
