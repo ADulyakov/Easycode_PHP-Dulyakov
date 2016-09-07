@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
-<!--HTML part "View table author" -->
+<!--HTML part "Add author" -->
 <form action="" name="addToBase" method="GET">
     Имя автора:     <input type="text" name="author"> <br>
     Возраст автора: <input type="text" name="age"> <br>
-    <input type="button" name="addButton" value="добавить" >
+    <input type="submit" name="addButton" value="добавить" >
 </form>
 
 <?php
@@ -69,7 +69,7 @@ if(isset($_GET['author']) && $_GET['author'] !='' && $_GET['age'] !=''){
 //echo '</pre>';
 
 ?>
-
+<!--HTML part "View table author" -->
 <table border="1">
     <tr>
         <th> № </th>
@@ -87,7 +87,7 @@ if(isset($_GET['author']) && $_GET['author'] !='' && $_GET['age'] !=''){
             <td>
                 <form action="" name="deleteAuthor" method="GET">
                     <input type="hidden" name="delAuthorId" value="<?= $author['id'] ?>">
-                    <input type="button" name="delete"  value="Удалить">
+                    <input type="submit" name="delete"  value="Удалить">
                 </form>
             </td>
         </tr>
