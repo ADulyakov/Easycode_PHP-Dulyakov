@@ -3,7 +3,15 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+?>
+<!--HTML part "View table author" -->
+<form action="" name="addToBase" method="GET">
+    Имя автора:     <input type="text" name="author" value="" > <br>
+    Возраст автора: <input type="text" name="age" value="" > <br>
+    <input type="button" name="addButton" value="добавить" >
+</form>
 
+<?php
 //Host and User Data
 $host ='localhost';
 $user = 'root';
@@ -61,20 +69,12 @@ if(isset($_GET['delAuthorId'])) {
     $delFromDB = mysqli_query($connectionObject, "DELETE FROM `author` WHERE `id` = $delId");
 };
 
-echo '<br />';
-echo '<pre>';
-print_r($rows);
-echo '</pre>';
+//echo '<br />';
+//echo '<pre>';
+//print_r($rows);
+//echo '</pre>';
 
 ?>
-
-<!--HTML part "View table author" -->
-
-<form action="" name="addToBase" method="GET">
-Имя автора:     <input type="text" name="author" value="" > <br>
-Возраст автора: <input type="text" name="age" value="" > <br>
-                <input type="button" name="addButton" value="добавить" >
-</form>
 
 <table border="1">
     <tr>
@@ -85,17 +85,19 @@ echo '</pre>';
         <th> Удалит автора </th>
     </tr>
     <?php foreach ($rows as $index => $author) : ?>
-    <tr>
-        <td> <?= $author ['id'] ?> </td>
-        <td> <?= $author ['name'] ?> </td>
-        <td> <?= $author ['age'] ?> </td>
-        <td> <?= $author ['booksQuantity'] ?> </td>
-        <td>
-            <form action="" name="deleteAuthor" method="GET">
-                <input type="hidden" name="delAuthorId" value="<?= $author['id'] ?>">
-                <input type="button" name="delete"  value="Удалить">
-            </form>
-        </td>
-    </tr>
+        <tr>
+            <td> <?= $author ['id'] ?> </td>
+            <td> <?= $author ['name'] ?> </td>
+            <td> <?= $author ['age'] ?> </td>
+            <td> <?= $author ['booksQuantity'] ?> </td>
+            <td>
+                <form action="" name="deleteAuthor" method="GET">
+                    <input type="hidden" name="delAuthorId" value="<?= $author['id'] ?>">
+                    <input type="button" name="delete"  value="Удалить">
+                </form>
+            </td>
+        </tr>
     <?php endforeach; ?>
 </table>
+
+
