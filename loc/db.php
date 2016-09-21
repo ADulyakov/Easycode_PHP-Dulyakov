@@ -21,16 +21,31 @@ function getDbConnection(){
     return $connectionObject;
 };
 
-function fetchAll($sql){
+/**
+ * @param $sql
+ * @return array
+ */
+function fetchAll($sql) {
     //receiving data
     $connectionObject = getDbConnection();
     
     $resource = mysqli_query($connectionObject, $sql);
     
     $rows = array();
-    while ($row = mysqli_fetch_assoc($resource)){
+
+//    while (true) {
+//        $row = mysqli_fetch_assoc($resource);
+//        if ($row === null) {
+//            break;
+//        }
+//
+//        $rows[] = $row;
+//    }
+
+    while ($row = mysqli_fetch_assoc($resource)) {
         $rows[] = $row;
     };
 
     return $rows;
 };
+

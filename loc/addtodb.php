@@ -4,16 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 // File DB data
-require_once 'db.php';
-// Connection to DB
-$connectionObject = getDbConnection();
+require_once 'query.php';
+
 //Add author to DB
-if(isset($_GET['author']) && $_GET['author'] !='' && $_GET['age'] !=''){
-    $name = trim ($_GET['author']);
-    $name = addslashes($name);
-    $age = $_GET['age'];
-    $sqlAddDataToBase = "INSERT INTO `author` (`name`, `age`) VALUES ('$name','$age');";
-    $saveToBase = mysqli_query($connectionObject, $sqlAddDataToBase);
+if(isset($_GET['author']) && $_GET['author'] !='' && $_GET['age'] !='') {
+    $saveToBase = addAuthor($_GET['author'], $_GET['age']);
     if($saveToBase){
         echo "Автор добавлен успешно";
     } else {
@@ -22,3 +17,6 @@ if(isset($_GET['author']) && $_GET['author'] !='' && $_GET['age'] !=''){
 };
 
 header('location: index.php');
+
+?>
+
