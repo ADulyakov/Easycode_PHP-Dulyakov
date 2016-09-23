@@ -10,7 +10,6 @@ class Human
 
 
 
-
     public function printAge()
     {
         echo $this->age;
