@@ -1,16 +1,11 @@
 <?php
 
+require_once 'BaseController.php';
 
-
-class SashaController
+class SashaController extends BaseController
 {
-    public function allAction()
+    public function indexAction()
     {
-        echo 'all SashaControllers';
-    }
-
-    public function showAction()
-    {
-        echo __CLASS__ . ' - ' . __FUNCTION__;
+        $this->render('sasha/index');
     }
 }

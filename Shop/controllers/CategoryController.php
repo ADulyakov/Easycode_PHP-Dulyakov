@@ -1,14 +1,15 @@
 <?php
+require_once 'BaseController.php';
 
-class CategoryController
+class CategoryController extends BaseController
 {
     public function allAction()
     {
-        echo 'all';
+        $this->render('category/all');
     }
 
     public function showAction()
     {
-        echo __CLASS__ . ' - ' . __FUNCTION__;
+        $this->render('category/show');
     }
 }
