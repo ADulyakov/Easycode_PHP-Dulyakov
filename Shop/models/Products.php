@@ -5,7 +5,7 @@ class All
 {
     public function getProducts()
     {
-        $sql = "SELECT * FROM `product`";
+        $sql = "SELECT `title` FROM `product`";
         return Db::getConnection()->query($sql)->fetchAll();
     }
 }

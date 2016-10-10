@@ -1,18 +1,18 @@
 <?php
 require_once 'BaseController.php';
-require_once 'models/products.php';
+require_once 'models/Products.php';
 
-class ProductController extends BaseController
+class ProductsController extends BaseController
 {
 
     public function allAction()
     {
-        $productsModel = new All();
+        $productsModel = new Product();
 
         $this->render(
             'products/all',
             array(
-                'categories' => $productsModel->getProducts(),
+                'products' => $productsModel->getProducts(),
             )
         );
     }
