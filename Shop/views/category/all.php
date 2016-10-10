@@ -1,1 +1,5 @@
-<h1>All action view</h1>
+<ul>
+    <?php foreach ($categories as $category): ?>
+        <li><?= $category['name'] ?></li>
+    <?php endforeach; ?>
+</ul>
