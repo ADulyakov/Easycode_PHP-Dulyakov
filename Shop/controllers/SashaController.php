@@ -1,6 +1,6 @@
 <?php
-
-require_once 'BaseController.php';
+namespace Shop\controllers;
+//require_once 'BaseController.php';
 
 class SashaController extends BaseController
 {

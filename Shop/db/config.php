@@ -1,4 +1,6 @@
 <?php
+namespace Shop\db;
+
 const HOST = 'localhost';
 const USER = 'root';
 const PASSWORD = 'easycode2';

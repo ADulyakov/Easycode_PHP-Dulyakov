@@ -1,11 +1,10 @@
 <?php
+namespace Shop\controllers;
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+use Shop\models\Product;
 
-require_once 'BaseController.php';
-require_once 'models/Product.php';
+//require_once 'BaseController.php';
+//require_once 'models/Product.php';
 
 class ProductsController extends BaseController
 {

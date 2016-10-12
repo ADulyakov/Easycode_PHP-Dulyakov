@@ -1,6 +1,7 @@
 <?php
+namespace Shop\controllers;
 
-require_once 'BaseController.php';
+//require_once 'BaseController.php';
 
 class IndexController extends BaseController
 {

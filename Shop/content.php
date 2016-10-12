@@ -1,3 +1,7 @@
+<?php
+namespace Shop;
+?>
+
 <article class="article">
     <h1>London</h1>
     p>London is the capital city of England. It is the most populous city in the United Kingdom,

@@ -1,5 +1,8 @@
 <?php
-require_once 'db/Db.php';
+namespace Shop\views\template;
+use Shop\db\Db;
+
+//require_once 'db/Db.php';
 
 $sql = "SELECT * FROM category";
 $rows = Db::getConnection()->query($sql)->fetchAll();

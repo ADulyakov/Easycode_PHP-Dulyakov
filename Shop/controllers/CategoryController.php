@@ -1,6 +1,10 @@
 <?php
-require_once 'BaseController.php';
-require_once 'models/Category.php';
+namespace Shop\controllers;
+
+use Shop\models\Category;
+
+//require_once 'BaseController.php';
+//require_once 'models/Category.php';
 
 class CategoryController extends BaseController
 {

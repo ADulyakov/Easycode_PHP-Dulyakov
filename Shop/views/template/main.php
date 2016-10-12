@@ -1,3 +1,7 @@
+<?php
+namespace Shop\views\template;
+?>
+
 <!DOCTYPE html>
 <html>
 <?php require_once 'head.php'; ?>

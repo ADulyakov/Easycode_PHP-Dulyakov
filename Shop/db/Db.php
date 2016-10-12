@@ -1,6 +1,7 @@
 <?php
-
-require_once 'config.php';
+namespace Shop\db;
+//use Shop\db\config; //
+//require_once 'config.php';
 
 // PATTER SINGLETON
 class Db

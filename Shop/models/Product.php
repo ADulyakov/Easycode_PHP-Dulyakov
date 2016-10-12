@@ -1,5 +1,6 @@
 <?php
-require_once 'db/Db.php';
+namespace Shop\models;
+//require_once 'db/Db.php';
 
 class Product
 {
