@@ -13,11 +13,14 @@ class ProductsController extends BaseController
     public function allAction()
     {
         $productModel = new Product();
-
+        $limit = (int) 2;
+        if (isset($_GET['limit'])){
+            $limit = $_GET['limit'];
+        }
         $this->render(
             'products/all',
             array(
-                'products' => $productModel->getProducts(),
+                'products' => $productModel->getProducts($limit),
             )
         );
     }
