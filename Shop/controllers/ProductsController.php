@@ -1,18 +1,23 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once 'BaseController.php';
-require_once 'models/Products.php';
+require_once 'models/Product.php';
 
 class ProductsController extends BaseController
 {
 
     public function allAction()
     {
-        $productsModel = new Product();
+        $productModel = new Product();
 
         $this->render(
             'products/all',
             array(
-                'products' => $productsModel->getProducts(),
+                'products' => $productModel->getProducts(),
             )
         );
     }

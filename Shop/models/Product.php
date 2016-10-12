@@ -1,7 +1,7 @@
 <?php
 require_once 'db/Db.php';
 
-class All
+class Product
 {
     public function getProducts()
     {
