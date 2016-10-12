@@ -26,6 +26,7 @@ class Router
         if (file_exists($fileControllerPath)) { // true
             include $fileControllerPath;
 
+            $controllerName = 'shop\controllers\\' . $controllerName;
             $controllerInstance = new $controllerName; // new CategoryController();
             $actionName = $action . 'Action'; // allAction
             if (method_exists($controllerInstance, $actionName)) {
