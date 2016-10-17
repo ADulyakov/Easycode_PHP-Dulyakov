@@ -16,7 +16,7 @@ class UserController extends BaseController
         $this->render(
             'user/all',
             array(
-                'user' => $userModel->getUser(),
+                'user' => $userModel->getUsers(),
             )
         );
     }
