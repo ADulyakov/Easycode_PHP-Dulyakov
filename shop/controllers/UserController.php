@@ -7,7 +7,7 @@ class UserController extends BaseController
     public function allAction(){
 
         $helperCategory = new \shop\helper\User();
-        $categoryModel = new User();
+        $userModel = new User();
         $limit =(int) 2;
         if (isset ($_GET['limit'])){
             $limit = $_GET['limit'];
@@ -16,7 +16,7 @@ class UserController extends BaseController
         $this->render(
             'user/all',
             array(
-                'user' => $categoryModel->getUser(),
+                'user' => $userModel->getUser(),
             )
         );
     }
