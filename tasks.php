@@ -30,13 +30,13 @@ echo 'Написать функцию, которая принимает пер�
       среднюю цену у товаров';
 /**
 * Пример:
-* $products = array(
+* $product = array(
 *     'product1' => array('price' => 100),
 *     'product2' => array('price' => 200),
 *     'product3' => array('price' => 300),
 *     'product4' => array('price' => 400),  
 * );
-* $avgPrice = getAvgPrice($products);
+* $avgPrice = getAvgPrice($product);
 * echo $avgPrice; // 250
 */      
 
