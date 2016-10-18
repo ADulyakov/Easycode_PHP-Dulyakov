@@ -17,7 +17,7 @@ class ProductsController extends BaseController
         $this->render(
             'product/all',
             array(
-                'product' => $productModel->getProducts(),
+                'products' => $productModel->getProducts(),
             )
         );
     }
