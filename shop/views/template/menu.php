@@ -1,7 +1,4 @@
 <?php
-//namespace shop\views\template;
-//use shop\db\Db;
-
 require_once 'db/Db.php';
 
 $sql = "SELECT * FROM category";

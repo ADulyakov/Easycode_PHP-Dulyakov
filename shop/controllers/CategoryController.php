@@ -2,17 +2,20 @@
 namespace shop\controllers;
 
 use shop\models\Category;
+//use shop\helper\Category as HelperCategory; // 1
 
 class CategoryController extends BaseController
 {
     public function allAction()
     {
-        $helperCategory = new \shop\helper\Category();
         $categoryModel = new Category();
-        $limit =(int) 2;
-        if (isset ($_GET['limit'])){
+        $helperCategory = new \shop\helper\Category(); // 2
+        $helperProduct = new \shop\helper\Product();
+        $helperCategory->test();
+        $limit = null;
+        if (isset($_GET['limit'])) {
             $limit = $_GET['limit'];
-        };
+        }
 
         $this->render(
             'category/all',

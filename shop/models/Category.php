@@ -1,13 +1,11 @@
 <?php
 namespace shop\models;
-use shop\db\Db;
-//require_once 'db/Db.php';
 
-class Category
+class Category extends BaseModel
 {
     public function getCategories()
     {
         $sql = "SELECT id, name FROM category";
-        return Db::getConnection()->query($sql)->fetchAll();
+        return $this->fetchAll($sql);
     }
 }

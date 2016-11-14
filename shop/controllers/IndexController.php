@@ -1,12 +1,20 @@
 <?php
 namespace shop\controllers;
 
-//require_once 'BaseController.php';
+use shop\services\SessionService;
 
 class IndexController extends BaseController
 {
     public function indexAction()
     {
+        $session = SessionService::getInstance();
+        $login = $session->getValue('login');
+        if (isset($login)) {
+            echo 'Привет, ' . $login;
+        } else {
+            $session->setValue('login', 'bogdan');
+        }
+
         $this->render('index/index');
     }
 }

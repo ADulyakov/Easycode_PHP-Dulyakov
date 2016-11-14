@@ -1,28 +1,149 @@
 <?php
+
 namespace shop\controllers;
 
+
+use shop\models\User;
+use shop\services\SessionService;
+use shop\services\UserService;
+
 class UserController extends BaseController
-
 {
-    public function allAction(){
+    public function registrationAction()
+    {
+        if (count($_POST) > 0) {
+            $errors = array();
+            $name = $this->getValue('name', $_POST);
+            $lastname = $this->getValue('lastname', $_POST);
+            $email = $this->getValue('email', $_POST);
+            $password = $this->getValue('password', $_POST);
+            if (!$this->isValidName($name)) {
+                $errors[] = 'Имя должно содержать только буквы и иметь длину не более 50 символов';
+            }
+            if (!$this->isValidLastname($lastname)) {
+                $errors[] = 'Фамилия должна содержать только буквы и иметь длину не более 50 символов';
+            }
+            if (!$this->isValidEmail($email)) {
+                $errors[] = 'Не корректный email';
+            }
+            if (!$this->isValidPassword($password)) {
+                $errors[] = 'Слабый пароль';
+            }
 
-        $helperCategory = new \shop\helper\User();
-        $userModel = new User();
-        $limit =(int) 2;
-        if (isset ($_GET['limit'])){
-            $limit = $_GET['limit'];
-        };
+            if (count($errors) > 0) {
+                $this->render(
+                    'user/registration',
+                    [
+                        'errors' => $errors
+                    ]
+                );
+            } else {
+                $userModel = new User();
+                $userId = $userModel->saveUser(
+                    [
+                        'name' => $name,
+                        'lastname' => $lastname,
+                        'email' => $email,
+                        'password' => $password
+                    ]
+                );
 
-        $this->render(
-            'user/all',
-            array(
-                'user' => $userModel->getUsers(),
-            )
-        );
+                if ($userId) {
+                    UserService::login($email);
+                    header('location: index.php');
+                }
+            }
+        } else {
+            $this->render('user/registration');
+        }
     }
 
-    public function showAction()
+    public function loginAction()
     {
-        $this->render('user/show');
+        if (count($_POST) > 0) {
+            $email = $this->getValue('email', $_POST);
+            $password = $this->getValue('password', $_POST);
+            $errors = [];
+            if (!$this->isValidEmail($email)) {
+                $errors[] = 'Не корректный email';
+            }
+            if (!$this->isValidPassword($password)) {
+                $errors[] = 'Не корректный пароль';
+            }
+
+            if (count($errors) === 0) {
+                $userModel = new User();
+                $user = $userModel->getUserByEmail($email);
+                if (!$user) {
+                    $errors[] = 'Пользователь с таким email-ом не найден';
+                } else {
+                    if ($user['password'] === $password) {
+                        UserService::login($email);
+                        header('location: index.php');
+                    } else {
+                        $errors[] = 'Не правильный пароль';
+                    }
+                }
+            }
+            $this->render('user/login', ['errors' => $errors]);
+        } else {
+            $this->render('user/login');
+        }
+    }
+
+
+    public function profileAction()
+    {
+        $this->render('user/profile');
+    }
+
+    public function logoutAction()
+    {
+        UserService::logout();
+        header('location: index.php');
+    }
+
+    public function indexAction()
+    {
+        echo 'Текущий юзер: ' . SessionService::getInstance()->getValue('login');
+    }
+
+    protected function isValidName($name)
+    {
+        $nameLength = strlen($name);
+        if ($nameLength < 2 || $nameLength > 50) {
+            return false;
+        }
+
+        if (!preg_match('/[a-zA-Z]+$/', $name)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    protected function isValidLastname($lastname)
+    {
+        $lastnameLength = strlen($lastname);
+        if ($lastnameLength < 3 || $lastnameLength > 50) {
+            return false;
+        }
+
+        return true;
+    }
+
+    protected function isValidEmail($email)
+    {
+        return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+    }
+
+    protected function isValidPassword($password)
+    {
+        $passwordLength = strlen($password);
+        if ($passwordLength < 8) {
+            return false;
+        }
+
+        return true;
     }
 }

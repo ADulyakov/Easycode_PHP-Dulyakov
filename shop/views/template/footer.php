@@ -1,3 +1,1 @@
-
-
 <footer>footer copyrights</footer>

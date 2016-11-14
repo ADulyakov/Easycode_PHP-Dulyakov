@@ -1,12 +1,22 @@
 <?php
-namespace shop\models;
-use shop\db\Db;
 
-class User
+namespace shop\models;
+
+class User extends BaseModel
 {
     public function getUsers()
     {
-        $sql = "SELECT id, name FROM user";
-        return Db::getConnection()->query($sql)->fetchAll();
+
+    }
+
+    public function saveUser(array $userData)
+    {
+        return $this->insert('user', $userData);
+    }
+
+    public function getUserByEmail($email)
+    {
+        $sql = "SELECT * FROM `user` where email  = '{$email}'";
+        return $this->fetchOne($sql);
     }
 }
